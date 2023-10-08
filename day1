@@ -1,0 +1,155 @@
+Chrome 웹사이트 기본 브라우저 설정 후 시작하기
+
+Python 최신버전 설치
+*마지막에 python 설치 시, [Add python.exe to PATH] 옵션 클릭 꼭 해야
+실습 시 오류사항 발생 x
+
+(필요에 따라 다양한 모듈을 사용해야할 경우가 생길수도 있어서 다양한 버전 다운받아놓은 후 버전별로 작동 가능하게 가상환경 설정을 해놓는다.)
+
+https://www.python.org/
+
+
+
+
+위 사진처럼 다른버전도 recommended가 기입되어있는 파일로 설치하기
+
+​
+
+<설치 후, 제대로 설치되어있는지 확인하기>
+
+
+1) 윈도우 - 시스템 환경 변수 편집 검색
+
+2) 시스템 속성 → 환경 변수 → path 클릭 후 편집버튼 누르기 → 설치된 프로그램 목록 확인하기
+
+
+
+
+python39￦Script￦ / Python￦Python￦39￦ 처럼 적혀있는 2개 목록이 버전별로 알맞게 되어있는지 꼭 확인하기
+
+버전 하나당 사진설명처럼 2개의 목록 중 1개가 없을 경우 파이썬 설치할 때 꼭 클릭해야하는 옵션부분을 선택안해서이기 때문.
+
+이럴경우 따로 파일을 추가해줘야한다.
+
+​
+
+Windows Powershell 들어가서 개발도구 권한 허용
+ *poweshell 실행 시, 관리자 권한으로 실행하기 버튼 누르기
+
+실행 후, 아래 스크립트처럼 명령어 기입
+
+
+1) get-ExecutionPolicy → Restricted (앞에 명령어에 대한 반응)
+
+2) set-ExectuionPolicy RemoteSigned 명령어 실행
+
+3) 변경할지 질문에 Y(yes) 입력하여 실행 정책 변경
+
+4) 마지막으로 권한 확인하기 : get-ExecutionPolicy 해서 반응이 RemoteSigned로 변경되어있어야 함.
+
+*개발 언어 : get / set / execution / policy
+
+​
+
+IDE용으로 Visual studio code 설치
+https://code.visualstudio.com/
+(설치 할 때, 마지막에 모두 체크하고 다운받기 & 윈도우,맥 환경에 따라 선택해서 다운)
+
+​
+
+vsc 설치 후 아래 Extensions 아이콘 클릭 후 프로그램 다운하기 (ctrl + shift + x )
+
+
+
+1) indent-rainbow
+
+2)jupyter
+
+3) Material Icon Theme
+
+4) Prettier-Code formatter
+
+5) pylance
+
+6) python 다운로드 하기
+
+D2coding font 설치(github 파일 통해서)
+https://github.com/naver/d2codingfont
+
+
+Visual studio code에 들어가서 폰트설정
+File → Preferences → Settings → Text Editor → Font → Font Family 부분에 폰트다운한 이름명을 기입해준다.
+
+(D2Coding ligature, Consolas, 'Courier New', monospace) → Font weight 부분에 Edit in settings.json 클릭한 뒤, 아래 사진처럼 false부분을 true로 설정 후 저장
+
+
+
+vsc에서 가상환경만들기 - powershell 언어
+ *pwd : 현재 위치 파악
+1) File 불러오기 (Flie → Open folder)
+
+2) Terminal - New terminal ( ctrl + shift + ')
+
+​
+
+11 파이썬 버전으로 가상환경 만들기
+
+PS C : powershell
+
+​
+
+py -3.11 -m venv. venv
+
+py(명령어) -(version 이름) -m venv(관리자권한 개발환경 명령어) 가상환경이름(폴더이름)
+
+​
+
+.＼.venv＼Scripts.＼activate
+
+.하고 tab키를 누르면 .＼.venv(가상폴더이름)＼→ s하고 tab키를 누르면 ⇒ .＼.venv＼Scripts.＼가 생긴다. 여기서 activiate(실행 명령어)​​
+
+​
+위 명령어 기입하면 가상환경파일이 생성됨
+
+(.venv)PS : 접속한 가상환경 확인 (가상환경이 만들어졌다는 것)
+
+현재 python버전을 확인하는 법 : py —(dash 2번)version
+
+deactivate : 가상환경 비활성화
+
+가상환경 비활성화 후, python 버전 다시 확인하면 원래버전으로 확인됨.
+
+​
+
+Visual studio code 파일 사용법
+
+첫번째 아이콘 : new file 생성
+두번째 아이콘 : new folder 생성
+
+실습예제
+
+파이썬으로 가상환경 파일 만들기
+
+1) naver 3.11
+
+2) kakao 3.10
+
+3) samsung 3.9
+
+
+
+mkdir 파일이름 (파일 만들기)
+
+cd 파일이름 (파일위치를 네이버 파일로 변경)
+
+py -3.9 -m venv .venv (가상환경 만들기)
+
+.＼.venv＼Scripts.＼activate (가상환경 활성화)
+
+py -- version (파이썬 버전 확인)
+
+deactivate (가상환경에서 나가기)
+
+cd .. (원래 위치로 복귀)
+
+이런식으로 다른 파일도 동일하게 설정
